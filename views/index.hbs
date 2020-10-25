@@ -1,4 +1,5 @@
 <h1>{{title}}</h1>
+<hr>
 <h2>Battery Info</h2>
 <ul>
     <li>
@@ -8,9 +9,47 @@
         Is Charging: {{batInfo.charging}}
     </li>
 </ul>
+<br>
 <h2>DHCP DNSMASQ Info</h2>
 <ul>
     <li>
         <a href="/leases">Open</a>
     </li>
 </ul>
+<br>
+<h2>Interfaces Info</h2>
+<table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-0lax">interface</th>
+        <th class="tg-0lax">address</th>
+        <th class="tg-0lax">netmask</th>
+        <th class="tg-0lax">family</th>
+        <th class="tg-0lax">mac</th>
+        <th class="tg-0lax">internal</th>
+        <th class="tg-0lax">cidr</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#interfaces}}
+        <tr>
+            <td class="tg-0lax">{{interface_name}}</td>
+            <td class="tg-0lax">{{data_row.0.address}}</td>
+            <td class="tg-0lax">{{data_row.0.netmask}}</td>
+            <td class="tg-0lax">{{data_row.0.netmask}}</td>
+            <td class="tg-0lax">{{data_row.0.mac}}</td>
+            <td class="tg-0lax">{{data_row.0.internal}}</td>
+            <td class="tg-0lax">{{data_row.0.cidr}}</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax"></td>
+            <td class="tg-0lax">{{data_row.1.address}}</td>
+            <td class="tg-0lax">{{data_row.1.netmask}}</td>
+            <td class="tg-0lax">{{data_row.1.netmask}}</td>
+            <td class="tg-0lax">{{data_row.1.mac}}</td>
+            <td class="tg-0lax">{{data_row.1.internal}}</td>
+            <td class="tg-0lax">{{data_row.1.cidr}}</td>
+        </tr>
+    {{/interfaces}}
+    </tbody>
+</table>
