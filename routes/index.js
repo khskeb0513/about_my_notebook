@@ -17,10 +17,13 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/leases', (req, res, next) => {
-    const data = fs.readFileSync('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', 'utf8')
+    let leases = fs.readFileSync('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', 'utf8').split('\n')
+    leases = leases.map(each_data => {
+        return {row: each_data}
+    })
     res.render('leases', {
         title: 'Leases',
-        leases: data.replace(/\n/gi, '<br>')
+        leases: leases
     })
 })
 
