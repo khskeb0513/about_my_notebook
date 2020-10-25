@@ -40,3 +40,7 @@ body {
     text-decoration: none;
     color: black;
 }
+
+img {
+    vertical-align: middle;
+}
