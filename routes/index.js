@@ -20,7 +20,7 @@ router.get('/leases', (req, res, next) => {
     const data = fs.readFileSync('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', 'utf8')
     res.render('leases', {
         title: 'Leases',
-        leases: data.toString().replace(/\n/gi, '<br>')
+        leases: data.replace(/\n/gi, '<br>')
     })
 })
 
