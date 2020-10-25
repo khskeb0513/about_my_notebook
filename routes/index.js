@@ -21,10 +21,10 @@ router.get('/leases', (req, res, next) => {
         if (err) {
             next(err)
         } else {
-            console.log(data)
+            console.log(data.toString())
             res.render('leases', {
                 title: 'Leases',
-                leases: data
+                leases: data.toString()
             })
         }
     })
