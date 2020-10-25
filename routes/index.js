@@ -21,10 +21,9 @@ router.get('/leases', (req, res, next) => {
         if (err) {
             next(err)
         } else {
-            console.log(data.toString())
             res.render('leases', {
                 title: 'Leases',
-                leases: data.toString()
+                leases: data.toString().replace(/\n/gi, '<br>')
             })
         }
     })
