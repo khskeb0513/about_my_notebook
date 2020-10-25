@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
         charging: await isCharging()
     }
     await res.render('index', {
-        title: 'Battery Info',
+        title: 'AP generated with Hostapd',
         batInfo: batInfo
     })
 });
