@@ -1,7 +1,8 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 const batteryLevel = require('battery-level')
 const isCharging = require('is-charging')
+const fs = require('fs')
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
@@ -14,5 +15,12 @@ router.get('/', async (req, res, next) => {
         batInfo: batInfo
     })
 });
+
+router.get('/leases', (req, res, next) => {
+    fs.readFile('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', (err, data) => {
+        if (err) next(err)
+        else res.send(data)
+    })
+})
 
 module.exports = router;
