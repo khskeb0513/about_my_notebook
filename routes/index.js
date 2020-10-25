@@ -4,6 +4,7 @@ const batteryLevel = require('battery-level')
 const isCharging = require('is-charging')
 const fs = require('fs')
 const interfaces = require('interfaces')
+const df = require('df')
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
@@ -26,13 +27,27 @@ router.get('/', async (req, res, next) => {
     })
 });
 
+router.get('/df', (req, res, next) => {
+    df(async (e, table) => {
+        if (e) {
+            next(e)
+        } else {
+            console.log(table)
+            res.render('df', {
+                title: 'DF Information',
+                table: table
+            })
+        }
+    })
+})
+
 router.get('/leases', (req, res, next) => {
     let leases = fs.readFileSync('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', 'utf8').split('\n')
     leases = leases.map(each_data => {
         return {row: each_data}
     })
     res.render('leases', {
-        title: 'Leases',
+        title: 'DHCP DNSMASQ Information',
         leases: leases
     })
 })

@@ -3,10 +3,6 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-    color: #00B7FF;
-}
-
 .tg {
     border-collapse: collapse;
     border-spacing: 0;
@@ -38,4 +34,8 @@ a {
 .tg .tg-0lax {
     text-align: left;
     vertical-align: top
+}
+
+.no_style {
+    text-decoration: none;
 }

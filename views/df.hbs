@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+<hr>
+<table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-0lax">FileSystem</th>
+        <th class="tg-0lax">Blocks</th>
+        <th class="tg-0lax">Used</th>
+        <th class="tg-0lax">Available</th>
+        <th class="tg-0lax">Percent</th>
+        <th class="tg-0lax">MountPoint</th>
+        <th class="tg-0lax">Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#table}}
+        <tr>
+            <th class="tg-0lax">{{filesystem}}</th>
+            <th class="tg-0lax">{{blocks}}</th>
+            <th class="tg-0lax">{{used}}</th>
+            <th class="tg-0lax">{{available}}</th>
+            <th class="tg-0lax">{{percent}}</th>
+            <th class="tg-0lax">{{mountpoint}}</th>
+            <th class="tg-0lax">{{type}}</th>
+        </tr>
+    {{/table}}
+    </tbody>
+</table>
