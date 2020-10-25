@@ -1,4 +1,5 @@
 <h1>{{title}}</h1>
+<i>Page created by Kang.</i>
 <hr>
 <h2>Battery Info</h2>
 <ul>
@@ -18,41 +19,11 @@
 </ul>
 <br>
 <h2>Network Interfaces Info</h2>
-<table class="tg">
-    <thead>
-    <tr>
-        <th class="tg-0lax">interface</th>
-        <th class="tg-0lax">address</th>
-        <th class="tg-0lax">netmask</th>
-        <th class="tg-0lax">family</th>
-        <th class="tg-0lax">mac</th>
-        <th class="tg-0lax">internal</th>
-        <th class="tg-0lax">cidr</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#interfaces}}
-        <tr>
-            <td class="tg-0lax">{{interface_name}}</td>
-            <td class="tg-0lax">{{data_row.0.address}}</td>
-            <td class="tg-0lax">{{data_row.0.netmask}}</td>
-            <td class="tg-0lax">{{data_row.0.netmask}}</td>
-            <td class="tg-0lax">{{data_row.0.mac}}</td>
-            <td class="tg-0lax">{{data_row.0.internal}}</td>
-            <td class="tg-0lax">{{data_row.0.cidr}}</td>
-        </tr>
-        <tr>
-            <td class="tg-0lax"></td>
-            <td class="tg-0lax">{{data_row.1.address}}</td>
-            <td class="tg-0lax">{{data_row.1.netmask}}</td>
-            <td class="tg-0lax">{{data_row.1.netmask}}</td>
-            <td class="tg-0lax">{{data_row.1.mac}}</td>
-            <td class="tg-0lax">{{data_row.1.internal}}</td>
-            <td class="tg-0lax">{{data_row.1.cidr}}</td>
-        </tr>
-    {{/interfaces}}
-    </tbody>
-</table>
+<ul>
+    <li>
+        <a href="/interfaces">Open</a>
+    </li>
+</ul>
 <br>
 <h2>DF Info</h2>
 <ul>

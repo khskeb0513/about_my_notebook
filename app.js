@@ -19,7 +19,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')))
 
 const indexRouter = require('./routes/index');
+const dfRouter = require('./routes/df');
+const interfacesRouter = require('./routes/interfaces');
+const leasesRouter = require('./routes/leases');
 app.use('/', indexRouter);
+app.use('/df', dfRouter);
+app.use('/interfaces', interfacesRouter);
+app.use('/leases', leasesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
