@@ -17,15 +17,10 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/leases', (req, res, next) => {
-    fs.readFile('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', (err, data) => {
-        if (err) {
-            next(err)
-        } else {
-            res.render('leases', {
-                title: 'Leases',
-                leases: data.toString().replace(/\n/gi, '<br>')
-            })
-        }
+    const data = fs.readFileSync('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', 'utf8')
+    res.render('leases', {
+        title: 'Leases',
+        leases: data.toString().replace(/\n/gi, '<br>')
     })
 })
 
