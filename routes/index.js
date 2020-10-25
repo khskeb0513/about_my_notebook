@@ -19,7 +19,10 @@ router.get('/', async (req, res, next) => {
 router.get('/leases', (req, res, next) => {
     fs.readFile('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', (err, data) => {
         if (err) next(err)
-        else res.send(data)
+        else res.render('leases', {
+            title: 'Leases',
+            leases: data
+        })
     })
 })
 
