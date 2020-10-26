@@ -21,7 +21,7 @@ router.get('/', async (req, res, next) => {
         })
     })
     await res.render('index', {
-//        title: 'AP generated with Hostapd',
+       title: 'Information Page',
         batInfo: batInfo,
         interfaces: interfaces_array
     })
