@@ -4,7 +4,6 @@ const fs = require('fs')
 
 router.get('/', (req, res, next) => {
     let leases = fs.readFileSync('/var/lib/NetworkManager/dnsmasq-wlp2s0.leases', 'utf8').split('\n')
-    leases = leases.split('\n')
     leases = leases.map(each_data => {
         each_data = each_data.split(' ')
         return {
