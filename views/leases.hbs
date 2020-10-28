@@ -1,7 +1,23 @@
 <hr>
-<span>
+<table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-0lax">timestamp</th>
+        <th class="tg-0lax">macAddr</th>
+        <th class="tg-0lax">ipAddr</th>
+        <th class="tg-0lax">hostname</th>
+        <th class="tg-0lax">clientId</th>
+    </tr>
+    </thead>
+    <tbody>
     {{#leases}}
-        <span>{{row}}</span>
-        <br>
+        <tr>
+            <th class="tg-0lax">{{timestamp}}</th>
+            <th class="tg-0lax">{{macAddr}}</th>
+            <th class="tg-0lax">{{ipAddr}}</th>
+            <th class="tg-0lax">{{hostname}}</th>
+            <th class="tg-0lax">{{clientId}}</th>
+        </tr>
     {{/leases}}
-</span>
+    </tbody>
+</table>
