@@ -6,7 +6,6 @@ const fs = require('fs')
 const interfaces = require('interfaces')
 const df = require('df')
 
-/* GET home page. */
 router.get('/', async (req, res, next) => {
     const batInfo = {
         level: await batteryLevel() * 100,

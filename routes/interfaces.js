@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const interfaces = require('interfaces')
 
-/* GET home page. */
 router.get('/', async (req, res, next) => {
     let interfaces_object = await interfaces()
     const interfaces_array = []
